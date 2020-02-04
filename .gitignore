@@ -1,0 +1,8 @@
+/node_modules
+/temp
+/.idea
+/.DS_Store
+*.iml
+*.xml
+/build
+/clear

@@ -1,0 +1,57 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  $val: calc(#{$k} * 100vw + #{$b});
+  @return $val;
+}
+
+
+$header-height: calcFluidFontSize(40, 65, 998, 1500);
+
+@import "librares/fontawesome/fontawesome";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+  margin: 0;
+
+  .msg-counter {
+    z-index: 2;
+    position: absolute;
+    background: #adadad;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    right:-2px;
+    top: -8px;
+    display: flex;
+    min-width: 24px;
+    min-height: 24px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    text-align: center;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    &.active{
+      background: #EB5757;
+    }
+  }
+}
+
+@import "common";
+@import "sidebar";
