@@ -3,14 +3,14 @@
   padding-top: calcFluidFontSize(10, 30, 1024, 2000);
   background-color: #292f36;
   height: 100%;
-  width: calcFluidFontSize(100, 120, 1024, 2000);
+  width: calcFluidFontSize(90, 120, 1024, 2000);
 
   .dot__after_style:after {
     position: absolute;
     content: "\2022  \2022  \2022";
     width: 100%;
-    height: 14px;
-    font-size: 19px;
+    height:  calcFluidFontSize(10, 14, 1024, 1900);
+    font-size:  calcFluidFontSize(13, 19, 1024, 1900);
     font-weight: 600;
     top: -20px;
     color: #595959;
@@ -29,12 +29,12 @@
 
     &__avatar {
       position: relative;
-      height: calcFluidFontSize(60, 90, 1024, 2000);
-      width: calcFluidFontSize(60, 90, 1024, 2000);
+      height: calcFluidFontSize(50, 90, 1024, 2000);
+      width: calcFluidFontSize(50, 90, 1024, 2000);
       border-radius: 50%;
       background-color: white;
       background-image: url("/img/avatar.png");
-      background-size: 180px;
+      background-size: calcFluidFontSize(110, 180, 1024, 2000);
       background-position: 60% 0;
     }
   }
@@ -50,18 +50,18 @@
       flex-direction: column;
 
       .sidebar-left-navigation__item {
-        height: calcFluidFontSize(60, 90, 1024, 1900);
+        height: calcFluidFontSize(55, 90, 1024, 1900);
         width: 100%;
         position: relative;
-        padding: calcFluidFontSize(5, 0, 1024, 2000) 0;
-        margin-top: calcFluidFontSize(10, 20, 1024, 2000);
+        padding: calcFluidFontSize(5, 10, 1024, 2000) 0;
+        margin-top: calcFluidFontSize(7, 20, 1024, 2000);
         display: flex;
         justify-content: center;
         align-self: center;
 
         .nav-bar__linc {
           position: relative;
-          width: calcFluidFontSize(60, 90, 1024, 2000);
+          width: calcFluidFontSize(55, 90, 1024, 2000);
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -70,7 +70,7 @@
           cursor: pointer;
 
           .fas {
-            font-size: calcFluidFontSize(18, 24, 1024, 1900);
+            font-size: calcFluidFontSize(16, 22, 1024, 1900);
             color: #595959;
           }
 
@@ -80,7 +80,7 @@
             color: #787878;
             text-align: center;
             filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.35));
-            font-size: calcFluidFontSize(12, 16, 1024, 1900);
+            font-size: calcFluidFontSize(11, 14, 1024, 1900);
             line-height: calcFluidFontSize(28, 38, 1024, 1900);
 
           }

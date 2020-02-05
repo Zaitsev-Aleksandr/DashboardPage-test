@@ -21,9 +21,6 @@ $header-height: calcFluidFontSize(40, 65, 998, 1500);
   text-decoration: none;
   box-sizing: border-box;
 }
-button{
-  outline: none;
-}
 
 
 body {
@@ -37,5 +34,6 @@ body {
 @import "sidebar";
 @import "header";
 @import "main/meinHeadGroup";
-@import "main/leftContentBlock";
+@import "main/activeProjectsGroup";
 @import "main/rightContentBlock";
+@import "buttonInputGroup";

@@ -1,0 +1,52 @@
+.active-projects-section {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  .active-projects-group {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+    .active-project-group__elem, .active-project-group__header {
+      padding: 0 calcFluidFontSize(15, 40, 1024, 2000);
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: 100%;
+      min-height: calcFluidFontSize(55, 90, 1024, 2000);
+      border-bottom: 1px solid #dcdcdc;
+
+      .load-percent-value {
+        font-size: calcFluidFontSize(10, 12, 1024, 2000);
+        background-color: #ff503f;
+        color: white;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+        padding:4px  calcFluidFontSize(6, 10, 1024, 2000);
+        margin-right: calcFluidFontSize(6, 10, 1024, 2000);
+        span {
+          font-size: calcFluidFontSize(12, 24, 1024, 2000);
+        }
+
+      }
+      .active-project-group__elem-title{
+        font-size:calcFluidFontSize(12, 24, 1024, 2000);
+        color: #4b4b4b;
+        margin-right: auto;
+
+      }
+      .common-dot-button{
+        margin-left: calcFluidFontSize(4, 10, 1024, 2000);
+
+      } form{
+          margin-right: auto;
+        }
+    }
+}

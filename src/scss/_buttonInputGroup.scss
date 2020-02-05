@@ -1,0 +1,91 @@
+button{
+  outline: none;
+}
+
+.common-dot-button, .active-project-dot-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calcFluidFontSize(24, 40, 1024, 2000);
+  height:calcFluidFontSize(24, 40, 1024, 2000);
+   border-radius: calcFluidFontSize(15, 20, 1024, 2000);
+  cursor: pointer;
+
+  .fas, .far,.fad {
+    font-size: calcFluidFontSize(11,17, 1024, 2000);
+    line-height: calcFluidFontSize(24, 40, 1024, 2000);
+  }
+}
+
+.common-dot-button{
+  border: none;
+  .fas, .far,.fad{
+    color: #ffffff;
+  }
+}
+
+.active-project-dot-button{
+  margin-left: 10px;
+  background-color: transparent;
+  border:1px solid #c5c5c5;
+  .fas, .far,.fad{
+    color: #c5c5c5;
+  }
+  &:hover{
+    background-color: #ff503f;
+    border-color: #ff503f;
+    .fas, .far,.fad{
+      color:#ffffff;
+    }
+  }
+}
+
+.common-tram-button{
+  padding: 0 calcFluidFontSize(10, 15, 1024, 2000);
+  height: calcFluidFontSize(24, 40, 1024, 2000);
+  border-radius: calcFluidFontSize(15, 20, 1024, 2000);
+  border: 1px solid rgba(164, 164, 164, 0.53);
+  font-size:calcFluidFontSize(11, 18, 1024, 2000);
+  letter-spacing: 0;
+  color: #4b4b4b;
+  font-family: "Freight Sans Pro Semibold", sans-serif;
+  font-weight: bold;
+  background: transparent;
+  cursor: pointer;
+
+  .fas, .far {
+    line-height: calcFluidFontSize(24, 40, 1024, 2000);
+    color: #bbbbbb;
+    font-size: calcFluidFontSize(10,18, 1024, 2000);
+    margin: 0  calcFluidFontSize(5,10, 1024, 2000);
+  }
+
+}
+
+
+.attention-_button_color{
+  background-color: #ff503f;
+}
+
+form {
+  padding: 0 calcFluidFontSize(7, 20, 1024, 2000);
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: calcFluidFontSize(200, 330, 1024, 2000);
+    background: transparent;
+    height:calcFluidFontSize(36, 42, 1024, 2000);
+    border: none;
+    font-size: calcFluidFontSize(12, 22, 1024, 2000);
+    letter-spacing: -1px;
+
+    &::placeholder {
+      font-size: calcFluidFontSize(14, 22, 1024, 2000);
+      letter-spacing: -1px;
+      color: #c1c1c1;
+      font-family: "Freight Sans Pro Book", sans-serif;
+    }
+  }
+}
