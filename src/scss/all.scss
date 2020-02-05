@@ -1,16 +1,4 @@
-@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
-  $k: ($f-max - $f-min)/($v-max - $v-min);
-  $b: $f-min - $k * $v-min;
-
-  $b: $b * 1px;
-
-  $val: calc(#{$k} * 100vw + #{$b});
-  @return $val;
-}
-
-
-$header-height: calcFluidFontSize(40, 65, 998, 1500);
-
+@import "mixinsAndProperty";
 @import "librares/fontawesome/fontawesome";
 
 
@@ -21,13 +9,27 @@ $header-height: calcFluidFontSize(40, 65, 998, 1500);
   text-decoration: none;
   box-sizing: border-box;
 }
+.active-message-group::-webkit-scrollbar-track, .active-projects-group::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: white;
+ }
 
+.active-message-group::-webkit-scrollbar,  .active-projects-group::-webkit-scrollbar {
+  width: 7px;
+  background-color:white;
+}
+
+.active-message-group::-webkit-scrollbar-thumb, .active-projects-group::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color:rgba(0,0,0,0.2);
+}
 
 body {
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
   height: 100vh;
-  margin: 0;
-
-
 }
 
 @import "common";
@@ -35,5 +37,6 @@ body {
 @import "header";
 @import "main/meinHeadGroup";
 @import "main/activeProjectsGroup";
-@import "main/rightContentBlock";
+@import "main/activeMessageGroup";
 @import "buttonInputGroup";
+@import "personAvatar";

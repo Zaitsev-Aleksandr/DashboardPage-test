@@ -1,0 +1,106 @@
+.message-item-person-avatar-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calcFluidFontSize(45, 90, 1024, 2000);
+
+
+  .message-item-person__status {
+	top: 0;
+	left: 5px;
+	position: absolute;
+	width: calcFluidFontSize(12, 16, 1024, 2000);
+	height: calcFluidFontSize(12, 16, 1024, 2000);
+	border-radius: 50%;
+	border: 2px solid #ffffff;
+
+	&.online {
+	  background-color: #aacc4e;
+	}
+
+	&.offline {
+	  background-color: #ff503f;
+	}
+  }
+
+  .person-avatar__elem {
+	border-radius: 50%;
+	width: calcFluidFontSize(30, 60, 1024, 2000);
+	height: calcFluidFontSize(30, 60, 1024, 2000);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200%;
+  }
+
+}
+
+
+.active-message-section {
+  margin-left: calcFluidFontSize(25, 35, 1024, 2000);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 32%;
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+
+  .active-message-group {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+
+	.active-message-group__item {
+	  padding: 0 calcFluidFontSize(10, 40, 1024, 2000);
+	  display: flex;
+	  flex-wrap: nowrap;
+	  align-items: center;
+	  width: 100%;
+	  min-height: calcFluidFontSize(45, 90, 1024, 2000);
+	  border-bottom: 1px solid #dcdcdc;
+
+
+	  .message-item-task-block {
+		.message-item-task__description {
+		  font-size: calcFluidFontSize(11, 19, 1024, 2000);
+		  color: #9c9c9c;
+		  font-family: "Freight Sans Pro Medium", sans-serif;
+		  font-weight: 500;
+
+		  .item-task__author {
+			color: #4b4b4b;
+		  }
+		}
+
+		.message-item-task__date {
+		  text-transform: uppercase;
+		  font-size: calcFluidFontSize(10, 14, 1024, 2000);
+		  line-height: calcFluidFontSize(18, 24, 1024, 2000);
+		  color: #9c9c9c;
+		  font-family: "Freight Sans Pro Semibold", sans-serif;
+		  font-weight: bold;
+		}
+	  }
+	}
+
+  }
+
+  .archive-project-group__elem {
+	padding: 0 calcFluidFontSize(15, 40, 1024, 2000);
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	width: 100%;
+	border-top: 1px solid #dcdcdc;
+	border-bottom: none;
+	min-height: calcFluidFontSize(40, 70, 1024, 2000);
+
+	.archive-project-group__elem-title {
+	  font-size: calcFluidFontSize(12, 24, 1024, 2000);
+	  color: #4b4b4b;
+	  margin: 10px;
+	}
+  }
+}

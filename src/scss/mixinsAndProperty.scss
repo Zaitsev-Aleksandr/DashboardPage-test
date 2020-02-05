@@ -1,0 +1,10 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+  $b: $b * 1px;
+  $val: calc(#{$k} * 100vw + #{$b});
+  @return $val;
+}
+
+$header-height:  calcFluidFontSize(60, 100, 1024, 2000);
+$tabHeader-height: calcFluidFontSize(40,80, 1024, 2000);

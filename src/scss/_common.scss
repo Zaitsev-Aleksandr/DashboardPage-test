@@ -2,55 +2,53 @@
   font-family: Roboto, sans-serif;
 }
 
-body {
-  .page {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .msg-counter {
-      filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.4));
-      z-index: 2;
-      position: absolute;
-      background: #adadad;
-      border: none;
-      border-radius: 50%;
-      color: white;
-      right: -2px;
-      top: -8px;
-      width: calcFluidFontSize(20, 32, 1024, 2000);
-      height: calcFluidFontSize(20, 32, 1024, 2000);
-      font-family: Roboto, sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: calcFluidFontSize(9, 14, 1024, 2000);
-      line-height: calcFluidFontSize(20, 32, 1024, 2000);;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .msg-counter {
+	z-index: 2;
+	position: absolute;
+	background: #adadad;
+	border: none;
+	border-radius: 50%;
+	color: white;
+	right: -2px;
+	top: -8px;
+	width: calcFluidFontSize(18, 32, 1024, 2000);
+	height: calcFluidFontSize(18, 32, 1024, 2000);
+	font-family: Roboto, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: calcFluidFontSize(8, 14, 1024, 2000);
+	line-height: calcFluidFontSize(18, 32, 1024, 2000);;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-      &.active {
-        background: #EB5757;
-      }
-    }
-
-    .page-wrapper {
-      width: 100%;
-      height: 100%;
-
-      main {
-        width: 100%;
-        height: calc(100% - #{calcFluidFontSize(80, 110, 1024, 2000)});
-
-        .content-body-block {
-          padding: 30px;
-          height: calc(100% - #{ calcFluidFontSize(80, 110, 1024, 2000)} + 30px);
-        }
-      }
-    }
+	&.active {
+	  background: #EB5757;
+	}
   }
 
+  .page-wrapper {
+	width: 100%;
+	height: 100%;
+
+	main {
+	  width: 100%;
+	  height: calc(100vh - #{$header-height});
+
+	  .content-body-block {
+		display: flex;
+		flex-wrap: nowrap;
+		padding: calcFluidFontSize(15, 35, 1024, 2000) calcFluidFontSize(25, 35, 1024, 2000);
+		height: calc(100vh - #{$header-height} -  #{$tabHeader-height} );
+	  }
+	}
+  }
 }

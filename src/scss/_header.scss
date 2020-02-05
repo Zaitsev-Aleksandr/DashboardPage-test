@@ -5,7 +5,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  height: calcFluidFontSize(80, 110, 1024, 2000);
+  height:$header-height;
   background: #f1f1f1;
   border-bottom: 1px ridge #d3d7da;
 

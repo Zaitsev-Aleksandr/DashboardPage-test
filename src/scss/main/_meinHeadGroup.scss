@@ -1,7 +1,7 @@
 .main-head-group {
   display: flex;
   flex-wrap: nowrap;
-  height: calcFluidFontSize(50,80, 1024, 2000);
+  height: calcFluidFontSize(40,80, 1024, 2000);
   background: #f2f2f2;
 
   .head-tab-block {
@@ -17,9 +17,9 @@
       justify-content: space-evenly;
       background-color: #f8f8f8;
       border: 1px solid #e3e5e7;
-      padding-right: calcFluidFontSize(15, 30, 1024, 2000);
+      padding-right: calcFluidFontSize(12, 30, 1024, 2000);
       width:calcFluidFontSize(220, 260, 1024, 2000);
-      font-size:calcFluidFontSize(16, 22, 1024, 2000);
+      font-size:calcFluidFontSize(12, 22, 1024, 2000);
       letter-spacing: -1px;
       line-height: 38px;
       color: #4b4b4b;
@@ -29,7 +29,7 @@
 
       .fab, .far {
         color: rgba(211, 211, 211, 0.8);
-        font-size: calcFluidFontSize(20, 30, 1024, 2000);
+        font-size: calcFluidFontSize(17, 30, 1024, 2000);
       }
       .msg-counter{
         top: 9px;

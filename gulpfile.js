@@ -7,13 +7,13 @@ let gulp = require('gulp'),
     browserSync = require("browser-sync").create();
 
 const path = {
-    build: {
-        html: 'build',
-        js: 'build/js/',
-        css: 'build/css/',
-        img: 'build/img/',
-        webfonts: 'build/webfonts/',
-        pages: 'build/pages/'
+    dist: {
+        html: 'dist',
+        js: 'dist/js/',
+        css: 'dist/css/',
+        img: 'dist/img/',
+        webfonts: 'dist/webfonts/',
+        pages: 'dist/pages/'
     },
     src: {
         html: 'src/index.html',
@@ -31,17 +31,17 @@ const path = {
         pages: 'src/pages/**/*.*',
         webfonts: 'src/webfonts/**/*.*'
     },
-    clean: './build/'
+    clean: './dist/'
 };
 
 
-const htmlBuild = () => (
+const htmldist = () => (
     gulp.src(path.src.html)
-        .pipe(gulp.dest(path.build.html))
+        .pipe(gulp.dest(path.dist.html))
         .pipe(browserSync.stream())
 );
 
-const scssBuild = () => (
+const scssdist = () => (
     gulp.src(path.src.style)
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('style.css'))
@@ -50,18 +50,18 @@ const scssBuild = () => (
             browsers: ['last 100 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest(path.build.css))
+        .pipe(gulp.dest(path.dist.css))
         .pipe(browserSync.stream())
 
 );
 
-const jsBuild = () => (
+const jsdist = () => (
     gulp.src(path.src.js)
-        .pipe(gulp.dest(path.build.js))
+        .pipe(gulp.dest(path.dist.js))
         .pipe(browserSync.stream())
 );
 
-const imgBuild = () => (
+const imgdist = () => (
     gulp.src(path.src.img)
         .pipe(imagemin({
             progressive: true,
@@ -71,36 +71,36 @@ const imgBuild = () => (
             // use: [pngquant()],
             interlaced: true
         }))
-        .pipe(gulp.dest(path.build.img))
+        .pipe(gulp.dest(path.dist.img))
         .pipe(browserSync.stream())
 );
 
-const fontsBuild = () => (
+const fontsdist = () => (
     gulp.src(path.src.webfonts)
-        .pipe(gulp.dest(path.build.webfonts))
+        .pipe(gulp.dest(path.dist.webfonts))
         .pipe(browserSync.stream())
 );
-const pagesBuild = () => (
+const pagesdist = () => (
     gulp.src(path.src.pages)
-        .pipe(gulp.dest(path.build.pages))
+        .pipe(gulp.dest(path.dist.pages))
         .pipe(browserSync.stream())
 );
 
 const watcher = () => {
     browserSync.init({
         server: {
-            baseDir: "./build"
+            baseDir: "./dist"
         }
     });
-    gulp.watch(path.watch.html, htmlBuild).on('change', browserSync.reload);
-    gulp.watch(path.watch.style, scssBuild).on('change', browserSync.reload);
-    gulp.watch(path.watch.js, jsBuild).on('change', browserSync.reload);
-    gulp.watch(path.watch.img, imgBuild).on('change', browserSync.reload);
-    gulp.watch(path.watch.webfonts, fontsBuild).on('change', browserSync.reload);
-    gulp.watch(path.watch.pages, pagesBuild).on('change', browserSync.reload);
+    gulp.watch(path.watch.html, htmldist).on('change', browserSync.reload);
+    gulp.watch(path.watch.style, scssdist).on('change', browserSync.reload);
+    gulp.watch(path.watch.js, jsdist).on('change', browserSync.reload);
+    gulp.watch(path.watch.img, imgdist).on('change', browserSync.reload);
+    gulp.watch(path.watch.webfonts, fontsdist).on('change', browserSync.reload);
+    gulp.watch(path.watch.pages, pagesdist).on('change', browserSync.reload);
 };
 
-const cleanBuild = () => (
+const cleandist = () => (
     gulp.src(path.clean, {allowEmpty: true})
         .pipe(clean())
 );
@@ -108,21 +108,21 @@ const cleanBuild = () => (
 
 /************ T A S K S ************/
 
-gulp.task('htmlBuild', htmlBuild);
-gulp.task('scssBuild', scssBuild);
-gulp.task('jsBuild', jsBuild);
-gulp.task('imgBuild', imgBuild);
-gulp.task('fontsBuild', fontsBuild);
-gulp.task('pagesBuild', pagesBuild);
+gulp.task('htmldist', htmldist);
+gulp.task('scssdist', scssdist);
+gulp.task('jsdist', jsdist);
+gulp.task('imgdist', imgdist);
+gulp.task('fontsdist', fontsdist);
+gulp.task('pagesdist', pagesdist);
 gulp.task('watcher', watcher);
 
-gulp.task('clean', cleanBuild);
+gulp.task('clean', cleandist);
 
 gulp.task('default', gulp.series(
-    cleanBuild,
-    htmlBuild,
-    scssBuild,
-    jsBuild,
-    gulp.parallel(fontsBuild,pagesBuild,imgBuild),
+    cleandist,
+    htmldist,
+    scssdist,
+    jsdist,
+    gulp.parallel(fontsdist,pagesdist,imgdist),
     watcher
 ));
